@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: email-extractor-api
+    env: node
+    plan: free
+    buildCommand: |
+      # Install Python and pip
+      apt-get update && apt-get install -y python3 python3-pip
+      
+      # Install Chrome dependencies
+      apt-get install -y wget unzip xvfb libxi6 libgconf-2-4
+      
+      # Install Chrome
+      wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+      sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+      apt-get update && apt-get install -y google-chrome-stable
+      
+      # Install ChromeDriver
+      wget -q https://storage.googleapis.com/chrome-for-testing-public/129.0.6668.70/linux64/chromedriver-linux64.zip -O /tmp/chromedriver.zip
+      unzip /tmp/chromedriver.zip -d /tmp/
+      mv /tmp/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+      chmod +x /usr/local/bin/chromedriver
+      rm -rf /tmp/chromedriver.zip /tmp/chromedriver-linux64
+      
+      # Install Python dependencies
+      pip3 install -r requirements.txt
+      
+      # Install Node.js dependencies
+      npm install
+    startCommand: |
+      node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8080
+      - key: GOOGLE_API_KEY
+        sync: false # This will prompt you to enter the value in the Render dashboard
+    autoDeploy: true
+    region: frankfurt
