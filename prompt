@@ -1,0 +1,51 @@
+
+{
+    "names": "abby, ciara, eliza, sophia, clara, emma, olivia, ava, mia, ella, grace, amelia, lily, hannah, emily, isabella, zoe, victoria, riley, scarlett, bella, ariana, savannah, chloe, stella, aubrey, zoey, allison, leah, layla, violet, aria, harper, natalie, caroline, piper, madison, ruby, eleanor, ivy, adeline, autumn, norah, valeria, evelyn, lucy, faith, hazel, madeline, serenity, aurora, penelope, camila, harlow, julia, elizabeth, abigail, josephine, maya, ivy, alice, lucia, hailey, melody, sienna, phoebe, naomi, sophie, rachel, margot, lauren, nora, lola, violet, jade, elena, emerson, paige, brooke, natalia, delilah, sarah, anna, ivy, gabriella, isla, camille, marley, skylar, lila, georgia, kennedy, adriana, lauren, cassidy, dakota, danielle, raegan, hope, juliana, eden, brynn, alana, diana, kyla, chelsea, blair, tess, wren, kaia, bailey, josie, blake, sierra, laurel, zoe",
+    "domain": "gmail.com",
+    "niche": "discount deals, best product reviews, shopping sales, product comparisons, gift ideas, tech gadgets, beauty products, home decor finds, fashion trends, health and wellness products, fitness gear, kitchen appliances, electronics buyers, toy deals, skincare essentials, online shopping discounts, product reviews, seasonal sales, holiday shopping, budget finds, kids toys deals, home organization tips, home improvement tools, pet products, travel gear, everyday essentials, eco-friendly products, digital accessories, personal care items, garden and outdoor equipment, gifts for her, gifts for him, deals for families, baby products, school supplies deals, household products, personal gadgets, fitness and health deals"
+}
+
+
+Ill use something like this
+
+so the url cannot be the whole array in 1 url
+
+it can be 1 per word combination
+
+so the url can look like this:
+
+@https://www.google.com/search?q=%22abba%22+%22gmail.com%22+%22amazon%22&start=2 
+
+and takes to change 1 variable per change
+
+example:
+
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ba%22&start=1
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ba%22&start=2
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ba%22&start=3
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ba%22&start=4
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ba%22&start=5
+
+
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ba%22&start=1
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ba%22&start=2
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ba%22&start=3
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ba%22&start=4
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ba%22&start=5
+
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ab%22&start=1
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ab%22&start=2
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ab%22&start=3
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ab%22&start=4
+@https://www.google.com/search?q=%22ab%22+%22gmail.com%22+%22ab%22&start=5
+
+
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ab%22&start=1
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ab%22&start=2
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ab%22&start=3
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ab%22&start=4
+@https://www.google.com/search?q=%22ba%22+%22gmail.com%22+%22ab%22&start=5
+
+
+
+    
